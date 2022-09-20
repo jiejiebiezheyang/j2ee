@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Object</title>
+        <script>
+            // 方式1
+            let stu = {
+                id: '1001',
+                name: '张三',
+                score: 97,
+                toString: function () {
+                    return 'id=' + this.id + ',name=' + this.name + ',score=' + this.score
+                }
+            }
+
+            alert(stu.id)
+            alert(stu.name)
+            alert(stu.score)
+            alert(stu.toString())
+            alert(stu)
+
+            // 方式2
+            let cat = new Object()
+            cat.name = '小花'
+            cat.age = 1
+            cat.eat = function () {
+                alert('吃鱼')
+            }
+
+            alert(cat.name)
+            alert(cat.age)
+            cat.eat()
+
+            let max = (a, b)=>a > b ? a : b
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

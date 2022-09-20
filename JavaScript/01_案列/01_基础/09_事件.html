@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>事件</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script>
+            // 事件监听
+            function changeInfo() {
+                document.getElementById('span').innerHTML = 'world'
+            }
+
+            onload = function (){
+                alert('页面加载了')
+
+                // 获取input元素点击事件
+                let input = document.getElementById('username')
+                input.onclick = function (){
+                    alert('haha')
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <!--静态注册-->
+        <span onclick="changeInfo()" id="span">hello</span>
+
+        <!--动态注册-->
+        <input type="text" name="username" id="username">
+    </body>
+</html>

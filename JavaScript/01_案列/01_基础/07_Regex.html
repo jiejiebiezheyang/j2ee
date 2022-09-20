@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Regex</title>
+        <script>
+            let str = 'hello123world45java'
+            // alert(str.search(/\d+/g))
+
+            str = 'hello123world45java'
+            let str2 = str.replace(/\d+/g,'NUM')
+            // alert(str2)
+            let tel = '17602599352'
+            let flag = /^(\+?0?86\-?)?1[3-9]\d{9}$/.test(str)
+            alert(flag)
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
