@@ -1,0 +1,223 @@
+1、什么是 HTML？
+    HTML 是用来描述网页的一种语言。
+    HTML 指的是超文本标记语言 (Hyper Text Markup Language)
+    HTML 不是一种编程语言，而是一种标记语言 (markup language)
+    标记语言是一套标记标签 (markup tag)
+    HTML 使用标记标签来描述网页
+
+2、HTML 标签
+    HTML 标记标签通常被称为 HTML 标签 (HTML tag)。
+    HTML 标签是由尖括号包围的关键词，比如 <html>
+    HTML 标签通常是成对出现的，比如 <b> 和 </b>
+    标签对中的第一个标签是开始标签，第二个标签是结束标签
+    开始和结束标签也被称为开放标签和闭合标签
+
+3、HTML 文档 = 网页
+    HTML 文档描述网页
+    HTML 文档包含 HTML 标签和纯文本
+    HTML 文档也被称为网页
+    Web 浏览器的作用是读取 HTML 文档，并以网页的形式显示出它们。浏览器不会显示 HTML 标签，而是使用标签来解释页面的内容：
+
+4、常用标签
+    <title>     网页的标题标签
+    <h1>~<h6>   文本的标题标签
+    <p>         段落标签
+    <br>        换行标签
+    <hr>        水平线
+
+    文本格式化标签
+    <b>,<strong>    粗体
+    <i>,<cite>,<em> 斜体
+    <sup>           上标
+    <sub>           下标
+
+    特殊符号标签
+    &nbsp;  空格
+    &quot;  双引号
+    &gt;    大于号
+    &lt;    小于号
+    &copy;  版权号
+    &reg;   注册商标
+    &trade; 商标
+
+    列表标签
+        1)有序列表
+        <ol>
+            <li>列表项1</li>
+            <li>列表项2</li>
+            ...
+        </ol>
+
+        ol的type属性可以设置列表项的符号
+        值                  列表项符号
+        1(默认值)           1,2,3...
+        A                   A,B,C...
+        a                   a,b,c...
+        I                   I,II,III...(大写罗马字符)
+        i                   i,ii,iii...(小写罗马字符)
+
+
+        2)无序列表
+        <ul>
+        <li>列表项1</li>
+        <li>列表项2</li>
+        ...
+        </ul>
+        ol的type属性可以设置列表项的符号
+        值                  列表项符号
+        disc(默认值)        实心圆
+        square              实心正方形
+        circle              空心圆
+
+        3)定义列表
+        <dl>
+            <dt>定义名词</dt>
+            <dd>定义名词的描述</dd>
+        </dl>
+
+    <font>          字体标签
+    属性
+    color   设置字体颜色
+    face    设置字体
+    size    设置大小
+
+
+5、标签(元素)的分类
+    1)块元素
+    有些元素独占一行
+    常见的块元素:
+        <h1>~<h6>,<p>,<hr/>,列表标签,<div>
+
+    2)内联元素(行内元素)
+    有些元素可以和其它元素公用一行
+    常见的内联元素
+        文本格式化标签,特殊符号标签,字体标签,<span>
+
+    说明：
+        块元素和块元素相斥，但是块元素内部可以包含块元素和行内元素
+        行内元素和行内元素可以共用一行，但是行内元素内部只能包含行内元素
+
+6、图片标签
+    <img/>
+    属性
+    src     图片路径
+    alt     图片不能显示时提示的文字信息(提供给搜索引擎使用)
+    title   鼠标移动到图片上的提示文本信息(给用户查看)
+
+7、超链接
+    <a>
+    属性
+    href    链接地址
+    target  打开的方式
+        _self   默认值，在当前窗口打开
+        _blank  在新的窗口打开
+        _parent 子窗口
+
+8、表格标签
+    <table> 表格
+    <tr>    行
+    <td>    单元格
+    <caption>   表格标题
+    <th>    表头单元格
+    表格语义化标签：
+        <thead> 表头
+        <tbody> 表体
+        <tfoot> 表脚
+    常用属性：
+        width   设置宽度
+        height  设置高度
+        border  设置边框
+        cellspacing 设置边框和边框之间的间距
+        cellpadding 设置单元格内容和边框之间的间距
+        align   设置水平对齐方式
+        bgcolor 设置背景色
+    合并单元格
+    rowspan 行合并
+    colspan 列合并
+
+9、表单标签
+    表单:在客户端手机用户信息,将信息交给服务器进行处理
+    <form>  表单标签
+    属性
+    action  表单提交的地址
+    enctype 表单的编码方式
+        application/x-www-form-urlencoded   	在发送前编码所有字符（默认）
+        multipart/form-data     不对字符编码。
+                                在使用包含文件上传控件的表单时，必须使用该值。
+        text/plain              空格转换为 "+" 加号，但不对特殊字符编码。
+    method  提交方式
+        get     默认值,表单数据提交到action指定的url中,然后将url发送到服务器的指定位置
+        post    表单数据包含在表单主体中，然后将表单主体发送到服务器的指定位置
+
+        区别: get会将表单数据显示浏览器地址栏中，数据不安全
+             post浏览器地址栏不显示数据，较为安全
+    name    表单名
+    target  打开方式
+        _self   默认值,在当前窗口打开
+        _blank  在新窗口打开
+
+10、表单项
+1)<input>
+    可以通过type属性设置不同的表单项
+    text        单行文本输入框
+    password    密码输入框
+    radio       单选按钮
+    checkbox    复选按钮
+    button      普通按钮
+    submit      提交按钮
+    reset       重置按钮
+    file        文件上传
+    hidden      隐藏域
+    image       图片域
+2)<textarea>
+    文本域
+    clos    设置列数
+    rows    设置行数
+
+3)<select>
+    下来列表
+    <select>
+        <option>列表项1</option>
+        <option>列表项2</option>
+        ...
+    </select>
+
+11、框架集
+    <frameset rows="水平框架" cols="垂直框架">
+        <frame src = "页面url">
+        <frame src = "页面url">
+    </frameset>
+
+    注意：frameset 代替 body
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

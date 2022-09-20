@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>盒子模型</title>
+        <style>
+            #d1{
+                border: 1px solid red;
+                margin-top: 10px;
+                margin-right: 50px;
+                margin-bottom: 50px;
+                padding: 10px;
+            }
+            #d1>div{
+                border: 1px solid blue;
+                height: 50px;
+                background-color: lightgray;
+            }
+            #d2{
+                border:1px solid green ;
+                height: 50px;
+                width: 80%;
+                margin: auto;/*div水平居中*/
+            }
+        </style>
+    </head>
+    <body>
+        <div id="d1">
+            <div></div>
+        </div>
+
+        <div id="d2"></div>
+    </body>
+</html>

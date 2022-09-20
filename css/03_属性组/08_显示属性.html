@@ -1,0 +1,49 @@
+<!--所有块元素都有宽和高这两个属性-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>显示属性</title>
+        <style>
+            div, span {
+                border: 1px solid red;
+                width: 300px;
+                height: 100px;
+            }
+
+            .dv {
+                display: inline;
+            }
+
+            #s2{
+                display: block;
+            }
+
+            .sp{
+             display: inline-block;
+            }
+
+            ol,li{
+                list-style: none;
+                display: inline;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="d1">div1</div>
+        <div id="d2" class="dv">div2</div>
+        <div id="d3" class="dv">div3</div>
+        <span id="s1">span1</span>
+        <span id="s2">span2</span>
+        <span id="s3" class="sp">span3</span>
+        <span id="s4" class="sp">span4</span>
+
+        <hr/>
+
+        <ol>
+            <li>html</li>
+            <li>css</li>
+            <li>js</li>
+        </ol>
+    </body>
+</html>

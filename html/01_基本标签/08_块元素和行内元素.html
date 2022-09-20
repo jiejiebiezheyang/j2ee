@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>块元素和行内元素</title>
+    </head>
+    <body>
+        <div>
+            <div style="border: 1px solid red">
+                div1
+                <p>块元素中可以存储其他块元素</p>
+                <span>块元素中还可以存储其他行内元素</span>
+            </div>
+
+            <!--块元素和块元素互斥-->
+            <div style="border: 1px solid blue">
+                div2
+            </div>
+        </div>
+
+        <span  style="border: 1px solid red">
+            <font>内联元素中可以存储其他的内联元素</font>
+        </span>
+        <span  style="border: 1px solid blue">
+            span2
+        </span>
+
+    </body>
+</html>

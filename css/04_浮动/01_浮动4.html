@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>清楚浮动</title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                float: left;
+            }
+
+            #d1 {
+                border: 1px solid red;
+            }
+
+            #d2 {
+                border: 1px solid green;
+                clear: left;
+                clear: right;
+            }
+
+            #d3 {
+                border: 1px solid blue;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="d1">div1</div>
+        <div id="d2">div2</div>
+        <div id="d3">div3</div>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>组合选择器</title>
+        <style>
+            /*后代元素选择器*/
+            #d1 p {
+                color: red;
+            }
+
+            /*子元素选择器*/
+            #d2 > p {
+                color: green;
+            }
+
+            /*相邻元素选择器*/
+            #d2 + span {
+                color: blue;
+            }
+
+            /*通用元素选择器*/
+            /*获取前面有<div>的所有<span>,会受到其他选择器的干扰(优先级比较低)*/
+            div ~ span {
+                color: greenyellow;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="d1">
+            <p>p1</p>
+            <div>
+                <p>p2</p>
+            </div>
+        </div>
+
+        <span>span</span><br/>
+
+        <div id="d2">
+            <p>p1</p>
+            <div>
+                <p>p2</p>
+            </div>
+        </div>
+
+        <span>span1</span><br/>
+        <span>span2</span>
+
+    </body>
+</html>
+

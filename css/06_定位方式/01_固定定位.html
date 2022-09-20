@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>固定定位</title>
+        <style>
+            #d1{
+                width: 100px;
+                height: 10000px;
+                border: 1px solid red;
+                background-color: lightgray;
+            }
+            #d2{
+                width: 50px;
+                height: 50px;
+                background-color: blue;
+                /*设置相对于body之间的间距*/
+                position: fixed;
+                top: 20px;
+                right: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="d1">无固定</div>
+        <div id="d2">固定</div>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>伪类选择器</title>
+        <style>
+            /*未被访问时的样式*/
+            #a1:link {
+                color: green;
+            }
+
+            /*设置访问后的样式*/
+            #a1:visited {
+                color: red;
+            }
+
+            /*鼠标悬停时的样式*/
+            #a1:hover {
+                font-size: 30px;
+                background: lightblue;
+            }
+
+            /*激活时的样式*/
+            #a1:active {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <a href="#" id="a1">点我一下</a><br/>
+            <a href="#" id="a2">不要点我</a>
+            <input type="hidden" name="">
+        </div>
+    </body>
+</html>
+

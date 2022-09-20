@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>背景属性</title>
+        <style>
+            div {
+                width: 80%;
+                height: 500px;
+                border: 1px solid red;
+            }
+
+            #d1 {
+                background-color: lightgray;
+            }
+
+            #d2 {
+                background: url('../img/85162550.gif') no-repeat center center;
+                background-size: 50%;
+            }
+
+            #d3 {
+                background-image: url('../img/相机.png');
+                background-repeat: repeat-x;
+            }
+
+            #d4 {
+                background-image: url('../img/相机.png');
+                background-repeat: repeat-y;
+            }
+
+            #d5 {
+                background-image: url('../img/相机.png');
+                background-repeat: no-repeat;
+            }
+
+            #d6 {
+                background-image: url('../img/相机.png');
+                background-repeat: repeat;
+            }
+
+            #d7 {
+                height: 5000px;
+                background-image: url('../img/相机.png');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+
+            #d8 {
+                height: 1000px;
+                background-image: url('../img/相机.png');
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            #d9 {
+                height: 1000px;
+                background-image: url('../img/相机.png');
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="d1">设置背景色</div>
+        <div id="d2">设置背景图片</div>
+        <div id="d3">设置背景图片的平铺方式(x)</div>
+        <div id="d4">设置背景图片的平铺方式(y)</div>
+        <div id="d5">设置背景图片的平铺方式(no)</div>
+        <div id="d6">设置背景图片的平铺方式(x,y)</div>
+        <div id="d7">设置背景图片是否滚动</div>
+        <div id="d8">设置背景图片的位置</div>
+        <div id="d9">设置背景图片的大小</div>
+    </body>
+</html>
