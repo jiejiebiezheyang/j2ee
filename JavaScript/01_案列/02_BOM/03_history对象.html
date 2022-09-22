@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>history</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $('#bt1').click(function () {
+                    history.back() // 后退一个历史记录
+                    history.go(-1) // 后退一个历史记录
+                })
+
+                $('#bt2').click(function () {
+                    history.forward() // 前进一个历史记录
+                    history.go(1) // 前进一个历史记录
+                })
+
+                $('#bt3').click(function () {
+                    history.go(0)
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <a href="up.html">进入up页</a>
+        <a href="down.html">进入down页</a>
+
+        <button id="bt1">返回上一页</button>
+        <button id="bt2">返回下一页</button>
+        <button id="bt3">刷新</button>
+
+    </body>
+</html>

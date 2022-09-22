@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>获取元素</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script>
+            window.onload = function () {
+                // 通过id获取元素
+                let div = document.getElementById('d1')
+                alert(div)
+
+                // 通过标签获取元素
+                let divs = document.getElementsByTagName('div')
+                for (let i; i < divs.length; i++) {
+                    alert(divs[i].innerHTML)
+                }
+
+                // 通过类名获取元素
+                let spans = document.getElementsByClassName('sp')
+                for (let i; i < spans.length; i++) {
+                    alert(spans[i].innerHTML)
+                }
+
+                // 通过name获取元素
+                let ps = document.getElementsByName('p1')
+                for (let i; i < ps.length; i++) {
+                    alert(ps[i].innerHTML)
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <div id="d1">div1</div>
+        <div>div2</div>
+        <span class="sp">sp1</span>
+        <span class="sp">sp2</span>
+        <p name="p1">p1</p>
+        <p name="p2">p2</p>
+    </body>
+</html>

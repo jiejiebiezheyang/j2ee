@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>表格隔行换色</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <style>
+
+            table, td {
+                border-collapse: collapse;
+            }
+        </style>
+
+        <script>
+            $(() => {
+                $('tr:even').css('background-color', 'lightblue')
+            })
+        </script>
+    </head>
+    <body>
+        <div>
+            <table align="center">
+                <tr>
+                    <td>第1行</td>
+                </tr>
+                <tr>
+                    <td>第2行</td>
+                </tr>
+                <tr>
+                    <td>第3行</td>
+                </tr>
+                <tr>
+                    <td>第4行</td>
+                </tr>
+                <tr>
+                    <td>第5行</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

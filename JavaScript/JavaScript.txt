@@ -137,6 +137,57 @@
         动态注册
             通过js获取元素事件
 
+13、BOM
+    Window 对象
+    所有浏览器都支持 window 对象。它表示浏览器窗口
+        属性
+            略
+        常用方法
+            alert()     弹出警告框
+            confirm()   弹出确认框
+            prompt()    弹出输入框
+            setInterval()   周期性执行指定操作
+            setTimeout()    指定时间后，执行一次操作
+            clearInterval() 取消setInterval()定时器
+            clearTimeout()  取消setTimeout()定时器
+    history对象
+        back    返回
+        forward 前进
+        go
+    Location对象
+        href        获取完整url
+
+
+14、DOM
+    属性
+        Document    表示整个页面
+            cookie      设置/获取当前文档的所有cookie
+            domain      设置/获取当前文档的域名
+            lastModify  获取文档最后修改的时间
+            referrer	返回载入当前文档的文档的 URL
+            title       返回当前文档标题
+            URL         返回当前的完整url
+    方法
+        getElementById()	        通过id获取指定元素
+        getElementsByTagName()      通过标签名获取指定元素
+        getElementsByClassName()	通过类名获取指定元素
+        getElementsByName()	        通过name属性获取指定元素
+        createElement()             创建元素节点
+        createTextNode()            创建文本节点
+        createAttribute()           创建属性节点
+
+    Element(页面元素)
+    属性
+        innerHtml       获取/设置元素内的HTML
+        innerText       获取/设置元素内的文本
+        textContent     获取/设置元素内的文本
+        style           获取/设置元素的样式
+    方法
+        getAttribute()      获取属性
+        setAttribute()      设置属性
+        appendChild()       添加子元素
+        cloneNode()         克隆节点
+
 
 
 

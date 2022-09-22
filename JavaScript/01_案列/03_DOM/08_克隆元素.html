@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>克隆元素</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <style>
+            html, body {
+                text-align: center;
+            }
+
+            div {
+                width: 50%;
+                height: 200px;
+                margin: auto;
+                align-content: center;
+            }
+
+            img {
+                height: 100%;
+            }
+        </style>
+        <script>
+            $(function () {
+                $('button').click(function (){
+                     $('#img').clone().appendTo('div')
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div>
+            <img src="../../../css/img/85162550.gif" alt=" " id="img">
+        </div>
+        <button>克隆图片</button>
+    </body>
+</html>

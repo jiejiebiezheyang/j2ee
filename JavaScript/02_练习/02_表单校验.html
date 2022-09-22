@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>表单校验</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <style>
+            html, body {
+                padding: 0;
+                margin: 0;
+                text-align: center;
+            }
+
+            div {
+                width: 50%;
+                margin: auto;
+                text-align: center;
+            }
+
+            table, td {
+                text-align: left;
+            }
+
+            .sb {
+                text-align: center;
+            }
+
+            span {
+                color: green;
+            }
+        </style>
+
+        <script>
+            $(() => {
+                let intervalId
+                let msg = $('span')
+                // 用户名
+                $('#username').focus(function () {
+                    intervalId = setInterval(() => {
+                        if (checkName($('#username').val())) {
+                            msg.html('')
+                        } else {
+                            msg.html('用户名错误')
+                        }
+                    }, 1)
+                })
+
+                // 密码
+                $('#pwd').focus(function () {
+                    intervalId = setInterval(() => {
+                        if (checkPwd($('#pwd').val())) {
+                            msg.html('')
+                        } else {
+                            msg.html('密码错误')
+                        }
+                    }, 1)
+                })
+
+                // 两次密码
+                $('#repwd').focus(function () {
+                    intervalId = setInterval(() => {
+                        if ($('#repwd').val() === $('#pwd').val()) {
+                            msg.html('')
+                        } else {
+                            msg.html('两次密码不一致')
+                        }
+                    }, 1)
+                })
+
+                //邮箱
+                $('#email').focus(function () {
+                    intervalId = setInterval(() => {
+                        if (checkEmail($('#email').val())) {
+                            msg.html('')
+                        } else {
+                            msg.html('邮箱格式错误')
+                        }
+                    }, 1)
+                })
+
+
+                // input失焦时删除信息
+                $('input').blur(function () {
+                    clearInterval(intervalId)
+                    msg.html('')
+                })
+
+                // 用户名正则
+                function checkName(username) {
+                    let regex = /^\w{5,10}$/
+                    return regex.test(username);
+                }
+
+                // 密码正则
+                function checkPwd(pwd) {
+                    let regex = /^\w{8,16}$/
+                    return regex.test(pwd)
+                }
+
+                // 邮箱正则
+                function checkEmail(email) {
+                    let regex = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+                    return regex.test(email)
+                }
+            })
+        </script>
+    </head>
+    <body>
+        <div>
+            <form action="#" method="get">
+                <table>
+                    <tr>
+                        <td colspan="2">用户注册</td>
+                    </tr>
+                    <tr>
+                        <td><label for="username">用户名</label></td>
+                        <td><input type="text" name="username" id="username" placeholder="用户名长度不超过10"
+                                   required="required"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="pwd">密 码</label></td>
+                        <td><input type="password" name="pwd" id="pwd" placeholder="字母数字下划线 长度8~16"
+                                   required="required"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="repwd">确认密码</label></td>
+                        <td><input type="password" name="repwd" id="repwd" required="required" placeholder="确认密码">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email</label></td>
+                        <td><input type="email" name="email" id="email" required="required" placeholder="xxx@xx.xx">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="realName">姓 名</label></td>
+                        <td><input type="text" name="realName" id="realName" required="required" placeholder="张三">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>性 别</td>
+                        <td><input type="radio" name="sex" id="sex0" value="0" checked="checked"><label
+                                for="sex0">男</label>
+                            <input type="radio" name="sex" id="sex1" value="1"><label for="sex1">女</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="birth">出生日期</label></td>
+                        <td><input type="datetime-local" name="birth" id="birth" required="required" placeholder=" ">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="code">验证码</label></td>
+                        <td><input type="text" name="code" id="code" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="sb">
+                            <button>提交</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="sb"><span></span></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

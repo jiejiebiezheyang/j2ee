@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>元素样式</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $('button').click(function () {
+                    let div = $('div')
+                    let w = parseInt(div.css('width'))
+                    let h = parseInt(div.css('height'))
+                    div.css({'width': w * 2 + 'px', 'height': h * 2 + 'px'})
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div style="width: 100px;height: 50px;border: 1px solid red"></div>
+        <button>点我一下</button>
+    </body>
+</html>

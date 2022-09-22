@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>高亮显示</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script>
+            $(() => {
+                // 高亮
+                let color
+                $('table tr').hover(
+                    (e) => {
+                        color = $(e.target).css('background')
+                        $(e.target).css({'background': 'yellow'})
+                    },
+                    (e) => {
+                        $(e.target).css({'background': color})
+                    }
+                )
+            })
+        </script>
+    </head>
+    <body>
+        <div>
+            <table align="center">
+                <tr>
+                    <td>第1行</td>
+                </tr>
+                <tr>
+                    <td>第2行</td>
+                </tr>
+                <tr>
+                    <td>第3行</td>
+                </tr>
+                <tr>
+                    <td>第4行</td>
+                </tr>
+                <tr>
+                    <td>第5行</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

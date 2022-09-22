@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>元素的创建和添加</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script>
+            $(function () {
+                $('input').click(function () {
+                    // 创建li节点
+                    let li = document.createElement('li')
+                    // 创建文本节点
+                    let cityName = document.createTextNode('深圳')
+                    // 添加文本
+                    li.appendChild(cityName)
+                    // 获取ul
+                    let ul = document.getElementsByTagName('ul')[0]
+                    ul.appendChild(li)
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <input type="button" id="addCity" value="添加城市">
+        <ul>
+            <li>北京</li>
+            <li>上海</li>
+            <li>广东</li>
+        </ul>
+    </body>
+</html>

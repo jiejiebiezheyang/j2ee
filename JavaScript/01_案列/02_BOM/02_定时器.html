@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>定时器</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <style>
+            div {
+                width: 500px;
+                height: 300px;
+                margin: auto;
+                text-align: center;
+
+            }
+
+            img {
+                height: 100%;
+                display: none;
+            }
+
+        </style>
+
+        <script>
+            $(function () {
+                alert('页面加载了')
+
+                let intervalId
+
+                // 3秒后显示
+                function showImg(){
+                    $('img').show()
+                    clearTimeout(intervalId)
+                    intervalId = setTimeout(hideImg,3000)
+                    clearTimeout(intervalId)
+                }
+
+                function hideImg(){
+                    $('img').hide()
+                    clearTimeout(intervalId)
+                }
+
+                // 定时器
+                intervalId = setTimeout(showImg,3000)
+
+                let i = 0;
+
+                function loopImg() {
+                    if (i===16){
+                        i = 0
+                    }
+                    $('img').attr('src', '../../../css/img/' + i++ + '.jpg')
+                }
+
+
+
+                setInterval(loopImg,200)
+
+            })
+        </script>
+    </head>
+    <body>
+        <div>
+            <img src="../../../css/img/1.jpg" alt="">
+        </div>
+    </body>
+</html>

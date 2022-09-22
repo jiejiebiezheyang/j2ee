@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <style>
+            html, body, option {
+                text-align: center;
+            }
+        </style>
+        <script>
+            $(function () {
+                let cities = []
+                cities[0] = ['南京', '苏州', '无锡', '南通']
+                cities[1] = ['杭州', '义务', '绍兴', '温州']
+                cities[2] = ['青岛', '淄博', '烟台', '济南']
+                cities[3] = ['长沙', '岳阳', '张家界', '湘潭 ']
+
+                $("#s1").change(function () {
+                    let s2 = $('#s2')
+                    s2.html('<option>-----请选择城市-----</option>')
+                    let s = $(this).val()
+                    for (let i = 0; i < cities[s].length; i++) {
+                        let city = cities[s][i]
+                        let op = $('<option></option>>').text(city)
+                        s2.append(op)
+                    }
+                }).trigger('change')
+            })
+        </script>
+    </head>
+    <body>
+        <div>
+            <select id="s1">
+                <option>-----请选择省份-----</option>
+                <option value="0">江苏</option>
+                <option value="1">浙江</option>
+                <option value="2">山东</option>
+                <option value="3">湖南</option>
+            </select>
+
+            <select id="s2">
+            </select>
+        </div>
+    </body>
+</html>
