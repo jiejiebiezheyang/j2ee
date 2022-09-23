@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>新闻字体</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <style type="text/css">
+            .out {
+                border: 1px red solid;
+                width: 300px;
+            }
+
+            .max {
+                font-size: 32px;
+                color: red;
+            }
+
+            .mid {
+                font-size: 22px;
+                color: black;
+            }
+
+            .min {
+                font-size: 14px;
+                color: blue;
+            }
+        </style>
+        <script>
+            $(function () {
+                $('#a1').click(function () {
+                    $('#news').get(0).setAttribute('class','max')
+                }).click()
+
+                $('#a2').click(function () {
+                    $('#news').get(0).setAttribute('class','mid')
+                })
+
+                $('#a3').click(function () {
+                    $('#news').get(0).setAttribute('class','min')
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div class="out">
+            <div>
+                <button id="a1">大</button>
+                <button id="a2">中</button>
+                <button id="a3">小</button>
+            </div>
+            <div id="news">
+                5月17日电 据公安部网站消息，5月17日中午，国务委员、
+                公安部部长郭声琨与越南中央政治局委员、
+                公安部部长陈大光通话，要求越方立即采取有力措施，坚决制止一切暴力活动，
+                严惩打砸抢不法分子，切实保护中方在越机构、企业和人员的人身财产安全。
+            </div>
+        </div>
+    </body>
+</html>

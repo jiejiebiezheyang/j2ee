@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>基本过滤选择器</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <style>
+            #one, #two, #three {
+                border: 1px solid black;
+                width: 150px;
+                height: 150px;
+                margin: 0 20px 0 0;
+                float: left;
+            }
+
+            .mini {
+                border: 1px solid blue;
+                background-color: lightcoral;
+                width: 60px;
+                height: 60px;
+                float: left;
+                margin: 10px 0 0 10px;
+            }
+
+            #four {
+                display: block;
+                border: 1px solid lightgreen;
+                width: 150px;
+                height: 150px;
+                margin: 0 20px 0 0;
+                float: left;
+            }
+        </style>
+
+        <script>
+            $(function () {
+                $('#btn1').click(function () {
+                    $('div:first').css('background-color', 'red')
+                })
+
+                $('#btn2').click(function () {
+                    $('div:last').css('background-color', 'orange')
+                })
+
+                $('#btn3').click(function () {
+                    $('div:not(.mini)').css('background-color', 'yellow')
+                })
+
+                $('#btn4').click(function () {
+                    $('div:odd').css('background-color', 'green')
+                })
+
+                $('#btn5').click(function () {
+                    $('div:even').css('background-color', 'blue')
+                })
+
+                $('#btn6').click(function () {
+                    $('div:eq(2)').css('background-color', 'black')
+                })
+
+                $('#btn7').click(function () {
+                    $('div:gt(2)').css('background-color', 'purple')
+                })
+
+                $('#btn8').click(function () {
+                    $('div:lt(2)').css('background-color', 'yellow')
+                })
+
+                $('#btn9').click(function () {
+                    $(':header').css('background-color', 'yellow')
+                })
+
+                $('#btn10').click(function () {
+                    $(':focus').css('background-color', 'yellow')
+                })
+            })
+        </script>
+
+    </head>
+    <body>
+        <input type="button" id="btn1" value="获取第一个div">
+        <input type="button" id="btn2" value="获取最后一个div">
+        <input type="button" id="btn3" value="获取div(不要mimi)">
+        <input type="button" id="btn4" value="获取所有奇数索引值的div">
+        <input type="button" id="btn5" value="获取所有偶数索引值的div">
+        <input type="button" id="btn6" value="获取索引值=2的div">
+        <input type="button" id="btn7" value="获取索引值>2的div">
+        <input type="button" id="btn8" value="获取索引值<2的div">
+        <input type="button" id="btn9" value="获取标题">
+        <input type="button" id="btn10" value="获取当前焦点元素"><br/>
+
+
+        <h3>三级标题</h3>
+        <h6>六级标题</h6>
+
+        <div id="one">
+            <div class="mini">d1</div>
+        </div>
+        <div id="two">
+            <div class="mini">d2</div>
+            <div class="mini">d3</div>
+        </div>
+        <div id="three">
+            <div class="mini">d4</div>
+            <div class="mini">d5</div>
+            <div class="mini">d6</div>
+        </div>
+
+        <span id="four">span</span>
+    </body>
+</html>

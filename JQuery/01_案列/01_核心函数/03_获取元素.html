@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>获取元素</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <script>
+            $(function () {
+                // 给按钮绑定单击事件
+                $('#btn').click(function () {
+                    // 获取输入框的值
+                    alert($('#name').val())
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <input type="text" id="name"><br/>
+        <button id="btn">获取输入框的值</button>
+    </body>
+</html>

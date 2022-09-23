@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>动态生成表格</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <style>
+            table{
+                border: 1px red solid;
+                border-collapse:collapse;
+            }
+            td{
+                border:1px blue solid;
+                width: 100px;
+                height: 60px;
+                margin: 0px;
+                padding: 0px;
+
+            }
+        </style>
+        <script>
+            $(function () {
+                $('input').click(function () {
+                    $('#one').html('')
+                    // 创建一个表格
+                    let table = $('<table></table>')
+                    // 生成行
+                    for (let i = 0; i < $('#row').val(); i++) {
+                        let  tr = $('<tr></tr>')
+                        // 生成列
+                        for (let j = 0; j < $('#col').val(); j++) {
+                            let td = $('<td></td>')
+                            tr.append(td)
+                        }
+                        table.append(tr)
+                    }
+
+                    $('#one').append(table)
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div id="one" >
+
+        </div>
+        输入行：<input type="text" id="row"/><br />
+        输入列：<input type="text" id="col"/><br />
+        <input type="button" value="创建表格"/>
+    </body>
+</html>

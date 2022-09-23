@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>属性选择器</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <style>
+            input:not([type='button']){
+                width: 400px;
+                height: 50px;
+            }
+        </style>
+        <script>
+            $(function () {
+                $('#bt1').click(function () {
+                    $('input[name]').css({'background': 'red'})
+                })
+
+                $('#bt2').click(function () {
+                    $('input[type="text"]').css({'background': 'blue'})
+                })
+
+                $('#bt3').click(function () {
+                    $('input[class^="uname"]').css({'background': 'green'})
+                })
+
+                $('#bt4').click(function () {
+                    $('input[class$="input"]').css({'background': 'orange'})
+                })
+
+                $('#bt5').click(function () {
+                    $('input[class*="in"]').css({'background': 'yellow'})
+                })
+
+                $('#bt6').click(function () {
+                    $('input[type][name="uPwd"]').css({'background': 'pink'})
+                })
+            })
+        </script>
+    </head>
+    <body>
+
+        <input type="button" id="bt1" value="获取所有含有name属性的元素">
+        <input type="button" id="bt2" value="获取type=text的元素">
+        <input type="button" id="bt3" value="获取class以uname开头的元素">
+        <input type="button" id="bt4" value="获取class以input结尾的元素">
+        <input type="button" id="bt5" value="获取class包含in的元素">
+        <input type="button" id="bt6" value="获取含有type属性且name=uPwd的元素"><br/><br/>
+
+        <label>
+            <input type="text" name="uname" class="uname_input" placeholder='type="text" name="uname" class="uname_input"'>
+        </label><br/>
+        <label>
+            <input type="password" name="uPwd" placeholder='type="password" name="uPwd"'>
+        </label><br/>
+        <label>
+            <input type="email" class="email_input" placeholder='type="email" class="email_input"'>
+        </label><br/>
+    </body>
+</html>

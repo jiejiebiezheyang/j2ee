@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>轮播图</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <style>
+            html, body {
+                text-align: center;
+            }
+
+            div {
+                width: 500px;
+                height: 300px;
+                margin: auto;
+                text-align: center;
+                border: 1px solid red;
+
+            }
+
+            img {
+                height: 100%;
+            }
+        </style>
+
+        <script>
+            $(function () {
+                let i = 0
+
+                function loopImg() {
+                    if (i === 16) {
+                        i = 0
+                    }
+                    $('img').attr('src', '../../css/img/' + i++ + '.jpg')
+                }
+
+                setInterval(loopImg, 500)
+
+                function getTime() {
+                    let date = new Date()
+                    $('span').html(date)
+                }
+
+                setInterval(getTime, 1)
+            })
+        </script>
+    </head>
+    <body>
+        <div>
+            <img src="../../css/img/0.jpg" alt="">
+        </div>
+        <span></span>
+    </body>
+</html>

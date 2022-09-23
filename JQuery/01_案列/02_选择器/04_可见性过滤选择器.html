@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>可见性过滤选择器</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <script>
+            $(function () {
+                $('#bt1').click(function () {
+                    alert($('div:hidden:first').text())
+                    alert($('input:hidden:last').val())
+                })
+
+                $('#bt2').click(function () {
+                    $(':visible').css({'background': 'red'})
+                })
+            })
+        </script>
+    </head>
+    <body>
+
+        <input type="button" id="bt1" value="获取所有隐藏元素">
+        <input type="button" id="bt2" value="获取所有可见元素">
+        <div>
+            <p>一段话</p>
+        </div>
+        <div style="display: none">100</div>
+        <input type="hidden" value="200">
+    </body>
+</html>

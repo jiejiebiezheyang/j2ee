@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>表单过滤选择器</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <script>
+            $(function () {
+                $('#bt1').click(function () {
+                    $(':input').css({'background': 'red'})
+                })
+
+                $('#bt2').click(function () {
+                    $(':text').css({'background': 'blue'})
+                })
+
+                $('#bt3').click(function () {
+                    $(':password').css({'background': 'green'})
+                })
+
+                $('#bt4').click(function () {
+                    $(':radio').css({'background': 'orange'})
+                })
+
+                $('#bt5').click(function () {
+                    $(':checkbox').css({'background': 'yellow'})
+                })
+
+                $('#bt6').click(function () {
+                    $(':submit').css({'background': 'pink'})
+                })
+
+                $('#bt7').click(function () {
+                    $(':reset').css({'background': 'pink'})
+                })
+
+                $('#bt8').click(function () {
+                    $(':button').css({'background': 'pink'})
+                })
+
+                $('#bt9').click(function () {
+                    $(':file').css({'background': 'pink'})
+                })
+
+                $('#bt10').click(function () {
+                    alert($('input:hidden').val())
+                })
+            })
+        </script>
+    </head>
+    <body>
+
+        <input type="button" id="bt1" value="获取所有表单项">
+        <input type="button" id="bt2" value="获取text">
+        <input type="button" id="bt3" value="获取password">
+        <input type="button" id="bt4" value="获取radio">
+        <input type="button" id="bt5" value="获取checkbox">
+        <input type="button" id="bt6" value="获取submit">
+        <input type="button" id="bt7" value="获取reset">
+        <input type="button" id="bt8" value="获取button">
+        <input type="button" id="bt9" value="获取file">
+        <input type="button" id="bt10" value="获取hidden"><br/><br/>
+
+        <form action="#" method="get" enctype="multipart/form-data">
+            用户名:<input type="text" name="username"><br/>
+
+            &nbsp;密 码 :<input type="password" name="pwd"><br/>
+
+            &nbsp;籍 贯 :
+            <select>
+                <option value="0">江苏</option>
+                <option value="1">浙江</option>
+                <option value="2">上海</option>
+            </select><br/>
+
+            &nbsp;性 别 :<input type="radio" name="sex" value="0">男
+            <input type="radio" name="sex" value="1">女<br/>
+
+            &nbsp;爱 好 :<input type="checkbox" name="hobby" value="0">读书
+            <input type="checkbox" name="hobby" value="1">看报
+            <input type="checkbox" name="hobby" value="2">游戏<br/>
+
+            &nbsp;照 片 :<input type="file" name="photo"><br/>
+
+            <input type="hidden" name="num" value="123">
+
+            <input type="button" value="普通按钮">
+            <input type="reset" value="重置按钮">
+            <input type="submit" value="提交按钮">
+        </form>
+    </body>
+</html>

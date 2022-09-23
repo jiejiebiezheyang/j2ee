@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>表单对象属性</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <script>
+            $(function () {
+                $('#bt1').click(function () {
+                    $(':enabled').css({'background': 'red'})
+                })
+
+                $('#bt2').click(function () {
+                    $(':disabled').css({'background': 'blue'})
+                })
+
+                $('#bt3').click(function () {
+                    let els = $(':checked')
+                    for (let i = 0; i < els.length; i++) {
+                        alert(els[i].value)
+                    }
+                })
+
+                $('#bt4').click(function () {
+                    alert($(':selected').val())
+                })
+            })
+        </script>
+    </head>
+    <body>
+
+        <input type="button" id="bt1" value="获取所有可用元素">
+        <input type="button" id="bt2" value="获取所有不可用元素">
+        <input type="button" id="bt3" value="获取被选中元素">
+        <input type="button" id="bt4" value="获取下拉列表中被选中的元素"><br/><br/>
+
+        <form action="#" method="get" enctype="multipart/form-data">
+            用户名:<input type="text" name="username" disabled="disabled" value="admin"><br/>
+
+            &nbsp;密 码 :<input type="password" name="pwd"><br/>
+
+            &nbsp;籍 贯 :
+            <select>
+                <option value="江苏">江苏</option>
+                <option value="浙江">浙江</option>
+                <option value="上海">上海</option>
+            </select><br/>
+
+            &nbsp;性 别 :<input type="radio" name="sex" value="男">男
+            <input type="radio" name="sex" value="女">女<br/>
+
+            &nbsp;爱 好 :<input type="checkbox" name="hobby" value="读书">读书
+            <input type="checkbox" name="hobby" value="看报">看报
+            <input type="checkbox" name="hobby" value="游戏">游戏<br/>
+
+            &nbsp;照 片 :<input type="file" name="photo"><br/>
+
+            <input type="hidden" name="num" value="123">
+
+            <input type="button" value="普通按钮">
+            <input type="reset" value="重置按钮">
+            <input type="submit" value="提交按钮">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>DOM对象和jQuery对象之间的相互转换</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <script>
+            $(function () {
+                // dom
+                let divs_dom = document.getElementsByTagName('div')
+                // dom转jQuery
+                let divs_jquery = $(divs_dom)
+                divs_jquery.text('haha')
+                // jQuery转DOM
+                divs_jquery[0].innerText = 'hello'
+                divs_jquery[1].innerText = 'world'
+            })
+        </script>
+    </head>
+    <body>
+        <div id="d1">d1</div>
+        <div id="d2">d2</div>
+    </body>
+</html>

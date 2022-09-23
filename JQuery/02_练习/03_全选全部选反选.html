@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+        <script>
+            $(function () {
+                // 全选
+                $('#b1').click(function () {
+                    $('input').each(function () {
+                        this.checked = true
+                    })
+                })
+
+                // 全不选
+                $('#b2').click(function () {
+                    $('input').each(function () {
+                        this.checked = false
+                    })
+                })
+
+                $('#b3').click(function () {
+                    $('input').each(function () {
+                        this.checked = !this.checked
+                    })
+                })
+
+
+            })
+        </script>
+    </head>
+    <body>
+        <div style="width: 50%;height: 400px;margin: auto;text-align: center">
+            <h1>不要手动选</h1>
+
+            <input type="checkbox">跳水<br/>
+            <input type="checkbox">游戏<br/>
+            <input type="checkbox">电影<br/>
+            <input type="checkbox">音乐<br/>
+
+            <button id="b1">全选</button>
+            <button id="b2">全不选</button>
+            <button id="b3">反选</button>
+        </div>
+
+
+    </body>
+</html>

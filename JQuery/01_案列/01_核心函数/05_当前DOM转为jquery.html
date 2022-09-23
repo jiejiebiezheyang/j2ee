@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>当前DOM转为jQuery</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <script>
+            $(function () {
+                $('#btn').click(function () {
+                    $(this).text('嘻嘻')
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <button id="btn">哈哈</button>
+    </body>
+</html>

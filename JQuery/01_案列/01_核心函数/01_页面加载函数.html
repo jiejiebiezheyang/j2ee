@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>页面加载函数</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <script>
+            // js的页面加载
+            // js的页面加载函数不能重载
+            onload = function () {
+                alert('hello')
+            }
+            onload = function () {
+                alert('world')
+            }
+
+            /*
+                jQuery页面加载
+                jQuery页面加载可以重载，优先于js的页面加载
+                jQuery页面加载按照先后次序执行
+            */
+            jQuery(document).ready(function () {
+                alert('jQuery页面加载1')
+            })
+
+            // 简写
+            $(document).ready(function () {
+                alert('jQuery页面加载2')
+            })
+
+            // 继续简写
+            $(function () {
+                alert('jQuery页面加载3')
+            })
+        </script>
+
+    </head>
+    <body>
+
+    </body>
+</html>

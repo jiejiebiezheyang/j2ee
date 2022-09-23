@@ -1,0 +1,152 @@
+1、jQuery
+    概述
+        jQuery是一个JavaScript库
+        jQuery简化了JavaScript
+
+    引入方式
+        <script src="jquery文件路径"></script>
+
+2、jQuery核心函数
+    $() 是jQuery核心函数，能够完成jQuery的很多操作
+        参数为function 页面加载函数,相当于js中的onload = function(){}
+        格式:$(function(){})
+
+        参数是html 创建html元素
+            比如:$('<div></div>') 创建一个div元素
+
+        参数为选择器字符串   获取相关元素
+            比如：$('div') 获取所有的div
+
+        参数为dom对象    将dom对象转成jQuery对象
+            比如：
+            var domELe = document.getElementById('id')  dom对象
+            $(domEle)   jquery对象
+
+        参数是this
+            将当前的dom对象转为jQuery对象
+            比如：
+                $('this')
+
+3、DOM对象和jquery对象
+    dom对象
+        通过document.get()获取对象
+        通过document.create() 创建对象
+        通过jquery对象转成dom对象
+
+    jQuery对象
+        通过$('选择器字符串')获取对象
+        通过$(html)创建对象
+        通过dom转为jQuery对象
+    相互转换
+        DOM转jQuery
+            $(DOM对象)
+         jQuery转DOM
+            jQuery对象[索引值]
+            jQuery对象.get(索引值)
+
+    jQuery对象本质
+        jquery对像 = DOM对象数组+jQuery提供的一些功能函数
+
+4、选择器
+    基本选择器
+        #id             id选择器
+        element         元素选择器
+        .class          类选择器
+        *               所有元素选择器
+        sel1.sel2,...   群主选择器
+    层级选择器
+        ancestor descendant     后代选择器
+        parent > child          子元素选择器
+        prev + next             相邻兄弟选择器
+        prev ~ siblings         通用兄弟选择器
+    基本过滤选择器
+        :first                  获取第一个元素
+        :last                   获取最后一个元素
+        :not(selector)          去除所有与给定选择器匹配的元素
+        :even                   偶数
+        :odd                    奇数
+        :eq(index)              匹配=指定索引值的元素
+        :gt(index)              匹配所有>指定索引值的元素
+        :lt(index)              匹配所有<指定索引值的元素
+        :header                 获取标题元素
+        :animated               获取有动画效果的元素
+        :focus                  获取焦点元素
+    内容过滤选择器
+        :contains(text)         获取包含指定文本的元素
+        :empty                  获取空元素
+        :has(selector)          获取含有指定元素的所有元素
+        :parent                 获取非空元素
+    可见性过滤选择器
+        :hidden                 获取隐藏的元素
+        :visible                获取可见的元素
+    属性选择器
+        [attribute]             获取指定有属性的元素
+        [attribute=value]       获取指定属性=指定值的元素
+        [attribute!=value]      获取指定属性!=指定值的元素
+        [attribute^=value]      获取指定属性以指定值开头的元素
+        [attribute$=value]      获取指定属性以指定值结尾的元素
+        [attribute*=value]      获取指定属性包含指定值的元素
+        [attr1][attr2][...]     多个属性选择器
+    表单选择器
+        :input                  匹配所有表单元素
+        :text                   单行文本框
+        :password               密码框
+        :radio                  单选按钮
+        :checkbox               多选按钮
+        :submit                 提交按钮
+        :reset                  重置按钮
+        :button                 按钮
+        :file                   文件域
+        :hidden                 隐藏的元素
+    表单对象属性
+        :enabled                匹配所有可用元素
+        :disabled               匹配所有不可用元素
+        :checked                匹配选择元素
+        :selected               匹配被选中option
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

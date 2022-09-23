@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>内容过滤选择器</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <script>
+            $(function () {
+                $('#bt1').click(function () {
+                    $('div:contains("hello")').css({'background': 'red'})
+                })
+
+                $('#bt2').click(function () {
+                    $(':empty').css({'background': 'red'})
+                })
+
+                $('#bt3').click(function () {
+                    $(':parent:not(body,html)').css({'background': 'red'})
+                })
+
+                $('#bt4').click(function () {
+                    $('div:has(p)').css({'background': 'red'})
+                })
+            })
+        </script>
+    </head>
+    <body>
+
+        <input type="button" id="bt1" value="获取所有包含hello的div">
+        <input type="button" id="bt2" value="获取所有空元素">
+        <input type="button" id="bt3" value="获取所有非空元素">
+        <input type="button" id="bt4" value="获取所有含有p元素的div">
+
+        <div>hello world</div>
+        <div>java hello</div>
+        <div style="width: 100px;height: 100px;"></div>
+        <div>
+            <p>一段话</p>
+        </div>
+    </body>
+</html>
