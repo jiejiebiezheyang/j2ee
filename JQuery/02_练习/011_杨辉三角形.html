@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script>
+            $(function () {
+                $('button').click(function () {
+                    $('div').html('')
+                    let rows = $('input').val()
+                    sjx(rows)
+
+                })
+            })
+
+            function sjx(rows) {
+                let arr = [];
+                // row控制行数
+                for (let i = 0; i < rows; i++) {
+                    arr[i] = [];
+                    // arr[i]的长度是i+1
+                    for (let j = 0; j < i + 1; j++) {
+                        // 每行的第一个和最后一个都是1
+                        arr[i][j] = 1;
+                        // 如果下标为0或数组最后一个，跳过
+                        if (j === 0 || j === (i + 1) - 1) {
+                            arr[i][j] = 1;
+                            continue;
+                        }
+                        // 否则当前元素=上方元素+上方元素的前一个
+                        arr[i][j] = arr[i - 1][j] + arr[i - 1][j - 1];
+                    }
+                }
+                show(arr);
+            }
+
+
+            function show(arr2) {
+                // 遍历二维数组并且输出
+                for (let i = 0; i < arr2.length; i++) {
+                    for (let j = 0; j < arr2[i].length; j++) {
+                        // 获取div ,将内容添加到div里
+                        $('div').append(arr2[i][j] + '\t')
+                    }
+                    // 打印完一行换行
+                    let br = $('<br/>')
+                    $('div').append(br)
+                }
+            }
+        </script>
+    </head>
+    <body>
+        请输入行数<input type="text" id="num"><br>
+        <button>打印</button>
+        <div>
+
+        </div>
+    </body>
+</html>
