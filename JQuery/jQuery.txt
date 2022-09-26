@@ -104,11 +104,116 @@
         :checked                匹配选择元素
         :selected               匹配被选中option
 
+5、元素筛选
+    过滤
+        eq(index|-index)        获取指定索引的元素
+        first()                 获取第一个元素
+        last()                  获取最后一个元素
+        hasClass(class)         判断是否有指定的类
+        is(expr|obj|ele|fn)     判断是否为指定元素
+        has(expr|ele)           获取含有指定元素的所有元素
+        not(expr|ele|fn)        去除所有与给定选择器匹配的元素
+    查找
+        find(e|o|e)             查找指定元素
+        parent([expr])          获取父元素
+        parents([expr])         获取祖先元素
+        siblings([expr])        获取兄弟元素
+    串联
+        add(e|e|h|o[,c])        像jquery对象中添加元素
 
+6、属性
+    属性
+        attr(name|pro|key,val|fn)   设置/获取属性
+        removeAttr(name)        删除属性
+        prop(n|p|k,v|f)         设置/获取属性
+        removeProp(name)        删除属性
+    attr和prop的区别
+        如果使用的是元素的固有属性，建议使用prop
+        如果使用的是元素的自定义属性，建议使用attr
+    CSS 类
+        addClass(class|fn)      添加类
+        removeClass([class|fn]) 删除类
+        toggleClass(class|fn[,sw])  添加/删除类
+    HTML代码/文本/值
+        html([val|fn])          获取/设置html
+        text([val|fn])          获取/设置text
+        val([val|fn|arr])       获取/设置value
+            val 可以设置select，checkbox，radio的选中项
 
+7、效果
+    基本
+        show([s,[e],[fn]])          显示元素
+        hide([s,[e],[fn]])          隐藏元素
+        toggle([s],[e],[fn])        显示/隐藏元素
+    滑动
+        slideDown([s],[e],[fn])     滑入元素
+        slideUp([s,[e],[fn]])       滑出元素
+        slideToggle([s],[e],[fn])   滑入/滑出元素
+    淡入淡出
+        fadeIn([s],[e],[fn])        淡入元素
+        fadeOut([s],[e],[fn])       淡出元素
+        fadeTo([[s],o,[e],[fn]])    设置透明度
+        fadeToggle([s,[e],[fn]])    淡入/淡出元素
 
+8、事件
+    页面载入
+        ready(fn)
+    事件处理
+        on(eve,[sel],[data],fn)     绑定事件
+        off(eve,[sel],[fn])         解绑事件
+    事件切换
+        hover([over,]out)           鼠标移入移出事件的切换
+        toggle([spe],[eas],[fn])    单击事件的切换
+    事件
+        blur([[data],fn])
+        change([[data],fn])
+        click([[data],fn])
+        dblclick([[data],fn])
+        focus([[data],fn])
+        keydown([[data],fn])
+        keypress([[data],fn])
+        keyup([[data],fn])
+        mousedown([[data],fn])
+        mouseup([[data],fn])
+        mousemove([[data],fn])
+        mouseout([[data],fn])
+        mouseover([[data],fn])
+        submit([[data],fn])
+    事件委派
+        live(type,[data,]fn)    给动态元素绑定事件
+    事件对象
+        eve.type        事件类型
+        eve.pageX       鼠标相对于文档的左边缘的位置
+        eve.pageY       鼠标相对于文档的顶部边缘的位置
+    事件冒泡
+        父子元素注册了同一个事件，当子元素事件触发时，父元素事件也会被触发
+        取消事件冒泡：在子元素事件函数中返回false
 
-
+9、文档处理
+    内部插入
+        a.append(b)         在a中最后面追加b
+        a.appendTo(b)       将a追加到b中的最后面
+        a.prepend(b)        在a中最前面面追加b
+        a.prependTo(b)      将a追加到b中的最前面
+    外部插入
+        a.after(b)          a的后面插入b
+        a.before(b)         a的前面插入b
+        a.insertAfter(b)    a插入到b的后面
+        a.insertBefore(b)   a插入到b的前面
+    包裹
+        wrap(html|ele|fn)
+        unwrap()
+        wrapAll(html|ele)
+        wrapInner(html|ele|fn)
+    替换
+        replaceWith(content|fn)
+        replaceAll(selector)
+    删除
+        empty()
+        remove([expr])
+        detach([expr])
+    复制
+        clone([Even[,deepEven]])
 
 
 

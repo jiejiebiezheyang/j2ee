@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>内部插入</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <script>
+            $(function () {
+                $('#btn1').click(function () {
+                    $('ul').append('<li>常州</li>')
+                })
+
+                $('#btn2').click(function () {
+                    $('<li>常州</li>').appendTo('ul')
+                })
+
+                $('#btn3').click(function () {
+                    $('ul').prepend('<li>常州</li>')
+                })
+
+                $('#btn4').click(function () {
+                    $('<li>常州</li>').prependTo('ul')
+                })
+            })
+        </script>
+
+    </head>
+    <body>
+        <button id="btn1">在城市列表最下面添加常州（append）</button>
+        <button id="btn2">在城市列表最下面添加常州（appendTo）</button>
+        <button id="btn3">在城市列表最下面添加常州（prepend）</button>
+        <button id="btn4">在城市列表最下面添加常州（prependTo）</button>
+
+        <h3>城市</h3>
+        <ul>
+            <li>苏州</li>
+            <li>南京</li>
+            <li>无锡</li>
+        </ul>
+    </body>
+</html>

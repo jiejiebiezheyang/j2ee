@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>效果</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <style>
+            div {
+                border: 1px solid lightblue;
+                width: 50%;
+                height: 500px;
+                margin: auto;
+            }
+
+            img {
+                width: 100%;
+            }
+        </style>
+        <script>
+            $(function () {
+                let img = $('img')
+                $('#bt1').click(function () {
+                    img.hide('slow')
+                })
+                $('#bt2').click(function () {
+                    img.show('slow')
+                })
+                $('#bt3').click(function () {
+                    img.toggle('slow')
+                })
+                $('#bt4').click(function () {
+                    img.slideDown('slow')
+                })
+                $('#bt5').click(function () {
+                    img.slideUp('slow')
+                })
+                $('#bt6').click(function () {
+                    img.slideToggle('slow')
+                })
+                $('#bt7').click(function () {
+                    img.fadeIn(1000)
+                })
+                $('#bt8').click(function () {
+                    img.fadeOut(1000)
+                })
+                $('#bt9').click(function () {
+                    img.fadeToggle(1000)
+                })
+                $('#bt10').click(function () {
+                    // 0表示完全透明，1表示完全可见
+                    img.fadeTo(1000,0.1)
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <button id="bt1">隐藏图片</button>
+        <button id="bt2">显示图片</button>
+        <button id="bt3">显示/隐藏图片</button>
+
+        <button id="bt4">滑入</button>
+        <button id="bt5">滑出</button>
+        <button id="bt6">滑入/滑出</button>
+
+        <button id="bt7">淡入</button>
+        <button id="bt8">淡出</button>
+        <button id="bt9">淡入/淡出</button>
+        <button id="bt10">设置透明度</button>
+        <br/><br/>
+        <div>
+            <img src="../../../css/img/14.jpg" alt=" ">
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>查找和串联</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <style>
+            span {
+                background-color: lightgreen;
+            }
+
+            div {
+                width: 200px;
+                height: 200px;
+                border: 1px solid lightblue;
+            }
+
+            #fu{
+                width: 300px;
+                height: 600px;
+            }
+        </style>
+
+        <script>
+            $(function () {
+                $('#bt1').click(function () {
+                    $(this).css('background-color', 'red')
+                    $('#fu').find('p').css('background-color', 'red')
+                })
+                $('#bt2').click(function () {
+                    $(this).css('background-color', 'red')
+                    $('#p2').parent().css('background-color', 'red')
+                })
+                $('#bt3').click(function () {
+                    $(this).css('background-color', 'red')
+                    $('p').parents('div').css('background-color', 'red')
+                })
+                $('#bt4').click(function () {
+                    $(this).css('background-color', 'red')
+                    $('#fu *').eq(0).siblings().css('background-color', 'red')
+                })
+                $('#bt5').click(function () {
+                    $(this).css('background-color', 'red')
+                    $('#fu *').eq(0).add($('#fu').children().eq(2)).css('background-color', 'red')
+                })
+            })
+        </script>
+
+    </head>
+    <body>
+
+        <button id="bt1">查找父div下面的所有p</button>
+        <button id="bt2">获取#p2的父元素</button>
+        <button id="bt3">获取p的祖先div元素元素</button>
+        <button id="bt4">获取d1的兄弟元素</button>
+        <button id="bt5">获取p1和div2</button>
+
+        <div id="fu">
+            <p>p1</p>
+            <div>
+                div1
+                <p id="p2">p2</p>
+            </div>
+            <div>div2</div>
+        </div>
+    </body>
+</html>

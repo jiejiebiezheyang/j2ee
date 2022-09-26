@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>属性</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <style>
+            div{
+                width: 100px;
+                height: 100px;
+                border: 1px solid lightgreen;
+            }
+            .pos{
+                margin: auto;
+            }
+
+            .bgc{
+                background-color: lightblue;
+            }
+        </style>
+        <script>
+            $(function () {
+                $('#bt1').click(function () {
+                    $('div').addClass('pos bgc')
+                })
+                $('#bt2').click(function () {
+                    $('div').removeClass('pos bgc')
+                })
+                $('#bt3').click(function () {
+                    $('div').toggleClass('pos bgc')
+                })
+            })
+        </script>
+
+    </head>
+    <body>
+        <button id="bt1">添加类</button>
+        <button id="bt2">删除类</button>
+        <button id="bt3">删除固有属性</button>
+        <br/><br/>
+        <div></div>
+    </body>
+</html>

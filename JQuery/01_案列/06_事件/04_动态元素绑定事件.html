@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>动态元素绑定事件</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <style>
+            div {
+                width: 300px;
+                height: 50px;
+                border: 1px solid lightgreen;
+            }
+        </style>
+        <script>
+            $(function () {
+                $('#btn1').click(function () {
+                    $('body').append($('<div>div</div>'))
+                })
+
+                // 动态元素不能通过绑定事件
+                // $('div').on('click',function () {
+                //     alert('div单击了')
+                // })
+
+                /*一般通过下面的方式给动态元素绑定事件*/
+                $(document).on('click','div',function () {
+                    alert('div单击了')
+                })
+            })
+        </script>
+
+    </head>
+    <body>
+        <input type="button" id="btn1" value="添加一个div">
+    </body>
+</html>

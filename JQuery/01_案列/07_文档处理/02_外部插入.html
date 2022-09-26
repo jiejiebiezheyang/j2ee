@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>外部插入</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <script>
+            $(function () {
+                $('#btn1').click(function () {
+                    $('#li1').after('<li>常州</li>')
+                })
+
+                $('#btn2').click(function () {
+                    $('<li>常州</li>').insertAfter('#li1')
+                })
+
+                $('#btn3').click(function () {
+                    $('#li1').before('<li>常州</li>')
+                })
+
+                $('#btn4').click(function () {
+                    $('<li>常州</li>').insertBefore('#li1')
+                })
+            })
+        </script>
+
+    </head>
+    <body>
+        <button id="btn1">苏州后面插入常州</button>
+        <button id="btn2">常州插入到苏州的后面</button>
+        <button id="btn3">苏州前面插入常州</button>
+        <button id="btn4">常州插入到苏州的前面</button>
+
+        <h3>城市</h3>
+        <ul>
+            <li id="li1">苏州</li>
+            <li>南京</li>
+            <li>无锡</li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>html_text_val</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <script>
+            $(function () {
+                $('#bt1').click(function () {
+                    alert($('div').html())
+                    $('div').html('<span>一句话</span>')
+                })
+                $('#bt2').click(function () {
+                    alert($('div').text())
+                    $('div').text('<span>一句话</span>')
+                })
+                $('#bt3').click(function () {
+                    alert($('input').val())
+                    $('input').val('张三')
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <button id="bt1">查看/设置html</button>
+        <button id="bt2">查看/设置text</button>
+        <button id="bt3">查看/设置value</button>
+        <br/><br/>
+        <div>
+            <p>一段话</p>
+            <input type="text">
+        </div>
+    </body>
+</html>

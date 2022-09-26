@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>属性</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+      <script>
+        $(function () {
+          $('#bt1').click(function (){
+            $('input:checkbox').prop('checked',true)
+          })
+          $('#bt2').click(function (){
+            $('p').attr('bgc','red')
+          })
+          $('#bt3').click(function (){
+            $('input:checkbox').removeProp('checked')
+          })
+          $('#bt4').click(function (){
+            $('p').removeAttr('bgc')
+          })
+        })
+      </script>
+
+    </head>
+    <body>
+      <button id="bt1">设置所有复选框为选中状态</button>
+      <button id="bt2">设置自定义属性bgc</button>
+      <button id="bt3">删除固有属性</button>
+      <button id="bt4">删除自定义属性bgc</button>
+      <br/><br/>
+      <input type="checkbox" value="1">read<br/>
+      <input type="checkbox" value="2">rode<br/>
+      <input type="checkbox" value="3">game<br/>
+
+      <p style="background-color: lightblue">一段话</p>
+    </body>
+</html>

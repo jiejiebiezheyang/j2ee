@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <script>
+            $(function () {
+                $('span').click(function () {
+                    console.log('span被单击了')
+                    return false // 阻止事件冒泡
+                })
+
+                $('div').click(function () {
+                    console.log('div被单击了')
+                })
+
+                $('body').click(function () {
+                    console.log('body被单击了')
+                })
+            })
+        </script>
+
+    </head>
+    <body>
+        <div>
+            <p>一段话</p>
+            <span>一句话</span>
+            <p>二段话</p>
+        </div>
+    </body>
+</html>

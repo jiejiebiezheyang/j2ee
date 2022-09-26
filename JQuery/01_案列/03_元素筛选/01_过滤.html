@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>过滤</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <style>
+            span {
+                background-color: lightgreen;
+            }
+            div{
+                width: 200px;
+                height: 200px;
+                border: 1px solid lightblue;
+            }
+        </style>
+
+        <script>
+            $(function () {
+                $('#bt1').click(function () {
+                    $('div').eq(1).css('background-color','red')
+                })
+                $('#bt2').click(function () {
+                    $('div').first().css('background-color','red')
+                })
+                $('#bt3').click(function () {
+                    $('div').last().css('background-color','red')
+                })
+                $('#bt4').click(function () {
+                    for (let i = 0; i < $('span').length; i++) {
+                        if($($('span')[i]).hasClass('sp')){
+                            $($('span')[i]).css('background-color','red')
+                        }
+                    }
+                })
+                $('#bt5').click(function () {
+                    alert($('div').eq(2).children().eq(3).is('p'))
+                })
+                $('#bt6').click(function () {
+                    $('div').has('p').css('background-color','red')
+                })
+                $('#bt7').click(function () {
+                    $('body *').not('span').css('background-color','red')
+                })
+            })
+        </script>
+
+    </head>
+    <body>
+
+        <button id="bt1">获取索引是1的div</button>
+        <button id="bt2">获取第一个div</button>
+        <button id="bt3">获取最后一个div</button>
+        <button id="bt4">获取类是sp的span</button>
+        <button id="bt5">判断第3的div第3个子元素是否p元素</button>
+        <button id="bt6">获取含有p元素的div</button>
+        <button id="bt7">获取body下所有的元素,不要span元素</button>
+
+        <div>div1</div>
+        <span class="sp">span1</span>
+        <div>div2</div>
+        <div>div3
+            <p>p1</p>
+            <p>p2</p>
+            <span>span2</span>
+        </div>
+    </body>
+</html>
