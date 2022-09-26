@@ -1,7 +1,3 @@
-/j2ee.iml
 /css/test/
-/css/css.iml
-/html/html.iml
 /.idea/
-/JavaScript/JavaScript.iml
-/JQuery/JQuery.iml
+*.iml
