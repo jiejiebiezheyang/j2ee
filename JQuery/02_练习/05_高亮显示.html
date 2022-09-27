@@ -4,17 +4,22 @@
         <meta charset="UTF-8">
         <title>高亮显示</title>
         <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <style>
+            ::selection{
+                background-color: #31e3bb;
+            }
+        </style>
         <script>
-            $(() => {
-                // 高亮
-                let color
+            // 一个元素可以同时绑定多个事件
+            $(function () {
                 $('table tr').hover(
-                    (e) => {
-                        color = $(e.target).css('background')
-                        $(e.target).css({'background': 'yellow'})
+                    function (){
+                        $(this).attr('bgc',$(this).css('background-color'))
+                        $(this).css({'background-color': 'yellow'})
                     },
-                    (e) => {
-                        $(e.target).css({'background': color})
+                    function(e) {
+                        // 还原背景色
+                        $(this).css({'background-color': $(this).attr('bgc')})
                     }
                 )
             })

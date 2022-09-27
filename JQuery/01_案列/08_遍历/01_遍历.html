@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>遍历</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <script>
+            $(function () {
+                $('#btn1').click(function () {
+                    $('li').each(function (index, domEle) {
+                        alert('index='+index+',text='+$(domEle).text())
+                    })
+
+                    /*$.each($('li'),function () {
+                        alert($(this).text())
+                    })*/
+                })
+            })
+        </script>
+
+    </head>
+    <body>
+        <button id="btn1">获取城市列表所有城市</button>
+
+        <h3>城市</h3>
+        <ul>
+            <li>苏州</li>
+            <li>南京</li>
+            <li>无锡</li>
+        </ul>
+    </body>
+</html>

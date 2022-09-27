@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Untitled Document</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <style>
+            ::selection{
+                background-color: yellow;
+                color: blue;
+            }
+
+            #employeeTable, #employeeTable td {
+                border-collapse: collapse;
+                border: 1px solid black;
+            }
+
+            #employeeTable td,#employeeTable th{
+                padding:10px 30px;
+                width: 100px;
+            }
+
+            #employeeTable tr:nth-child(odd){
+                background-color: lightpink;
+            }
+
+            #employeeTable tr:nth-child(odd):hover{
+                background-color: #e58393;
+            }
+
+            #employeeTable tr:nth-child(even){
+                background-color: lightblue;
+            }
+
+            #employeeTable tr:nth-child(even):hover{
+                background-color: #609ec0;
+            }
+
+            #employeeTable tr:first-child{
+                background-color: white;
+            }
+
+            #employeeTable tr:first-child:hover{
+                background-color: white;
+            }
+
+            div {
+                width: 50%;
+                margin: 50px auto;
+                text-align: center;
+            }
+
+            #formDiv table, #formDiv td {
+                text-align: center;
+            }
+        </style>
+        <script>
+            $(function () {
+                $('#addEmpButton').click(function () {
+                    let tr = $('<tr></tr>')
+                    let arr = [$('#empName').val(),$('#email').val(),$('#salary').val(),'<a href="javascript:;">Delete</a>']
+                    $.each(arr,function (index, value) {
+                        $('<td>'+value+'</td>').appendTo(tr)
+                    })
+                    $('#employeeTable').append(tr)
+                })
+
+                $(document).on('click', 'a', function () {
+                    $(this).parent().parent().remove()
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div id="formDiv">
+            <h4>添加新员工</h4>
+            name:
+            <input type="text" name="empName" id="empName"/><br/>
+            email:
+            <input type="text" name="email" id="email"/><br/>
+            salary:
+            <input type="text" name="salary" id="salary"/><br/>
+
+            <button id="addEmpButton" value="abc">Submit</button>
+
+        </div>
+
+        <table id="employeeTable" align="center">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Salary</th>
+                <th>Delete</th>
+            </tr>
+            <tr>
+                <td>Tom</td>
+                <td>tom@tom.com</td>
+                <td>5000</td>
+                <td><a href="javascript:;">Delete</a></td>
+            </tr>
+            <tr>
+                <td>Jerry</td>
+                <td>jerry@sohu.com</td>
+                <td>8000</td>
+                <td><a href="javascript:;">Delete</a></td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>bob@tom.com</td>
+                <td>10000</td>
+                <td><a href="javascript:;">Delete</a></td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <script>
+            $(function () {
+                $('#btn1').click(function () {
+                    $('#sz').replaceWith('<li>常州</li>')
+                })
+                $('#btn2').click(function () {
+                    $('<li>常州</li>').replaceAll('#sz')
+                })
+                $('#btn3').click(function () {
+                    $('ul').empty()
+                })
+                $('#btn4').click(function () {
+                    $('#sz').remove()
+                })
+
+                $('#btn5').click(function () {
+                   $('ul').clone().appendTo('body')
+                })
+            })
+        </script>
+
+    </head>
+    <body>
+        <button id="btn1">苏州替换成常州（replaceWith）</button>
+        <button id="btn2">苏州替换成常州（replaceAll）</button>
+        <button id="btn3">清空所有的城市</button>
+        <button id="btn4">删除苏州</button>
+        <button id="btn5">克隆城市列表</button>
+
+        <h3>城市列表</h3>
+        <ul>
+            <li id="sz">苏州</li>
+            <li>南京</li>
+            <li>无锡</li>
+        </ul>
+
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>遍历2</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+        <script>
+            $(function () {
+                // 遍历jQuery
+                $.each($('li'),function () {
+                    alert($(this).text())
+                })
+
+                // 遍历数组
+                $.each([1,2,3],function (i,num) {
+                    alert(i+'='+num)
+                })
+
+                // 遍历json
+                $.each({name:'张三',age:'14'},function (key,value) {
+                    alert('key='+key+',value='+value)
+                })
+            })
+        </script>
+
+    </head>
+    <body>
+        <h3>城市</h3>
+        <ul>
+            <li>苏州</li>
+            <li>南京</li>
+            <li>无锡</li>
+        </ul>
+    </body>
+</html>

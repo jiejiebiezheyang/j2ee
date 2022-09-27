@@ -200,20 +200,25 @@
         a.before(b)         a的前面插入b
         a.insertAfter(b)    a插入到b的后面
         a.insertBefore(b)   a插入到b的前面
-    包裹
-        wrap(html|ele|fn)
-        unwrap()
-        wrapAll(html|ele)
-        wrapInner(html|ele|fn)
     替换
-        replaceWith(content|fn)
-        replaceAll(selector)
+        a.replaceWith(b)    用b替换a
+        a.replaceAll(b)     a替换所有的b
     删除
-        empty()
-        remove([expr])
-        detach([expr])
+        empty()             清空元素
+        remove([expr])      删除指定元素
     复制
-        clone([Even[,deepEven]])
+        clone([Even[,deepEven]])    克隆元素
+
+10、jQuery对象的遍历
+    方式1：
+        jQuery对象.each(function(index, domEle){
+            // index当前遍历的索引(0,1,2,3....)
+            // domEle当前遍历到的dom元素，也可以使用this表示domEle
+        })
+    方式2：
+        $.each(jQuery对象,function(index, domEle){})
+    注意：该方式还可以遍历数组和JSON对象
+
 
 
 
