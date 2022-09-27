@@ -56,6 +56,7 @@
         </style>
         <script>
             $(function () {
+                // 添加
                 $('#addEmpButton').click(function () {
                     let tr = $('<tr></tr>')
                     let arr = [$('#empName').val(),$('#email').val(),$('#salary').val(),'<a href="javascript:;">Delete</a>']
@@ -65,8 +66,12 @@
                     $('#employeeTable').append(tr)
                 })
 
+                // 删除
                 $(document).on('click', 'a', function () {
-                    $(this).parent().parent().remove()
+                   let tr =  $(this).parent().parent()
+                    if(confirm('Are you sure to delete '+tr.children('td:eq(0)').text()+' ?')){
+                        tr.remove()
+                    }
                 })
             })
         </script>

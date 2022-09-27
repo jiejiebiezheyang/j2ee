@@ -5,23 +5,27 @@
         <title>jquery案例之抽奖</title>
         <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script>
-            let i = 0
             $(function () {
                 let intervalId
+                // 停止按钮不可用
+                $('#stopID').prop('disabled',true)
                 $('#startID').click(function () {
-                    intervalId = setInterval(imgLoop, 50)
+                    intervalId = setInterval(imgLoop, 10)
+                    $('#stopID').prop('disabled',false)
+                    $(this).prop('disabled',true)
                 })
 
                 $('#stopID').click(function () {
                     clearInterval(intervalId)
+                    $('#stopID').prop('disabled',true)
+                    $('#startID').prop('disabled',false)
+                    $('#img2ID').hide().prop('src', $('#img1ID').prop('src')).fadeIn('slow')
                 })
             })
 
             function imgLoop() {
-                if (i === 7) {
-                    i = 0
-                }
-                $('#img1ID').add('#img2ID').prop('src', './img/man0' + i++ + '.jpg')
+                let rd = Math.floor(Math.random()*7)
+                $('#img1ID').prop('src', './img/man0' + rd + '.jpg')
             }
         </script>
     </head>
@@ -29,12 +33,12 @@
 
         <!-- 小像框 -->
         <div style="border-style:dotted;width:160px;height:100px">
-            <img id="img1ID" src="./img/man00.jpg" style="width:160px;height:100px"/>
+            <img id="img1ID" src="./img/man00.jpg" style="width:160px;height:100px" alt=" "/>
         </div>
         <!-- 大像框 -->
         <div
                 style="border-style:double;width:800px;height:500px;position:absolute;left:500px;top:10px">
-            <img id="img2ID" src="./img/man00.jpg" width="800px" height="500px"/>
+            <img id="img2ID" src="./img/man00.jpg" width="800px" height="500px" alt=" "/>
         </div>
 
         <!-- 开始按钮 -->
