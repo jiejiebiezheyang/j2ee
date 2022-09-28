@@ -1,4 +1,4 @@
 /css/test/
 /.idea/
 *.iml
-/jdbc/target/
+target/
