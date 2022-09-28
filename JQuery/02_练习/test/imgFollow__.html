@@ -5,44 +5,38 @@
         <title>img_follow</title>
         <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <style>
-            html, body {
+            body {
                 text-align: center;
-                margin: 0;
-                padding: 0;
             }
 
             #small {
                 margin-top: 150px;
-                width: 300px;
             }
 
             #showBig {
                 position: absolute;
-                top: -100px;
                 display: none;
             }
         </style>
 
         <script>
             $(() => {
-                $('#small').click(function() {
-                    $('#showBig').show('fast')
-                    $(this).hide()
+                $('#small').click(function () {
+                    $('#showBig').show()
                 })
 
-                $('#showBig').click(function () {
-                    $(this).hide()
-                    $('#small').show('fast')
+                $('body').mousemove(function (e) {
+                    $('#showBig').offset({top: e.pageY+10, left: e.pageX+10})
                 })
             })
         </script>
     </head>
     <body>
 
-        <img id="small" src="./img/man00.jpg"/>
+        <img id="small" src="./img/small.jpg"/>
 
         <div id="showBig">
-            <img src="./img/man00.jpg">
+            <img src="./img/big.jpg">
         </div>
 
     </body>
