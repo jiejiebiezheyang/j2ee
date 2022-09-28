@@ -1,0 +1,20 @@
+1、jdbc
+    是java语言定义的一套标准(接口),用于和数据库进行通信
+    由不同的数据库厂商根据jdbc提供的不同的实现类(数据库驱动)
+
+2、数据库的连接
+    1) 导入数据库驱动
+        mysql-connector-java.jar
+    2) 编写配置文件
+        # 如果ip为当前本地主机，且端口为3306 ，localhost:3306可以省略
+        # url = jdbc:mysql://localhost:3306/test
+        driver = com.mysql.cj.jdbc.Driver
+        url = jdbc:mysql:///test
+        user = root
+        password = 123
+    3) 获取配置数据
+    4) 注册驱动
+        Class.forName(driver)
+        实际上为: DriverManager.registerDriver( new com.mysql.jdbc.Driver())
+    5) 获取连接
+        DriverManager.getConnection(url,user,password)
