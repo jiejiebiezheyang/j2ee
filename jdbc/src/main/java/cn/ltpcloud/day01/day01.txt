@@ -18,3 +18,22 @@
         实际上为: DriverManager.registerDriver( new com.mysql.jdbc.Driver())
     5) 获取连接
         DriverManager.getConnection(url,user,password)
+
+3、Statement
+    用于执行静态的SQL语句并返回她所生成结果的对象
+    conn.createStatement()  连接对象创建statement对象
+    execute(String sql)     执行更新操作          boolean
+    executeUpdate(String sql)   执行更新操作      int
+    executeQuery(String sql)    执行查询操作      ResultSet
+
+4、ResultSet类
+    查询得到的结果
+    boolean next()  判断是否有下一行数据，如果有返回true,并将指针向下移动,没有返回false
+    通过列索引获取值(列索引从1开始)
+        getInt(columnIndex)
+        getString(columnIndex)
+        getObject(columnIndex)
+    通过列的别名
+        getInt(columnLabel)
+        getString(columnLabel)
+        getObject(columnLabel)
