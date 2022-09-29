@@ -37,3 +37,7 @@
         getInt(columnLabel)
         getString(columnLabel)
         getObject(columnLabel)
+
+        ResultSetMetaData   获取结果集元数据
+        metaData.getColumnCount()   获取列数
+        metaData.getColumnLabel(columnIndex)   获取列别名
