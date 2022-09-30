@@ -22,7 +22,7 @@ public class DruidDemo {
             prop.load(ClassLoader.getSystemResourceAsStream("druid.properties"));
             ds = DruidDataSourceFactory.createDataSource(prop);
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
     }
 
@@ -30,7 +30,7 @@ public class DruidDemo {
         return ds.getConnection();
     }
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         System.out.println(getConnection());
     }
 }
