@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <!-- 配置Servlet -->
+    <servlet>
+        <servlet-name> MyServlet1</servlet-name>
+        <servlet-class>cn.ltpcloud.day01.MyServlet1</servlet-class>
+    </servlet>
+    <!-- 配置Servlet映射 -->
+    <servlet-mapping>
+        <servlet-name>MyServlet1</servlet-name>
+        <!--
+            配置资源的访问路径
+            '/' 在服务其中被解析为http://ip:port/虚拟的项目路径
+            '/ms1' 在服务器中被解析为http://ip:port/虚拟的项目路径/ms1
+         -->
+        <url-pattern>/ms1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name> MyServlet2</servlet-name>
+        <servlet-class>cn.ltpcloud.day01.MyServlet2</servlet-class>
+        <!-- 设置init执行时机
+         值为负数:默认（第一次访问servlet的时候执行）
+         值为整数或0：在服务器启动的时候执行（一般开发中我们的期望的方式）
+         -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyServlet2</servlet-name>
+        <url-pattern>/ms2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MyServlet3</servlet-name>
+        <servlet-class>cn.ltpcloud.day01.MyServlet3</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyServlet3</servlet-name>
+        <url-pattern>/ms3</url-pattern>
+    </servlet-mapping>
+</web-app>
