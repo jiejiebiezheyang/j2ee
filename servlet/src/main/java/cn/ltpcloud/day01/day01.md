@@ -155,7 +155,6 @@ public class MyServlet3 extends HttpServlet {
    - 请求行
      - 请求方式:GET
      - 请求资源url:资源路径[?请求参数列表]
-     - 状态码: 200
      - 版本:HTTP 1.1
    - 请求头
      - key: value 
@@ -169,7 +168,6 @@ public class MyServlet3 extends HttpServlet {
    - 请求行
      - 请求方式:POST
      - 请求资源url:资源路径
-     - 状态码: 200
      - 版本:HTTP 1.1
    - 请求头
      - key: value
