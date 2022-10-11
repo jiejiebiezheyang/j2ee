@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>bind</title>
+        <script src="WEB-INF/js/vue.js"></script>
+        <script>
+            window.onload = function () {
+                new Vue({
+                    el: "#dv",
+                    data: {
+                        url: 'https://www.baidu.com'
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div id="dv">
+            <a href="https://www.baidu.com">百度一下</a>
+            <!--给a标签的href绑定url数据模型-->
+            <a v-bind:href="url">百度一下</a>
+            <!-- 简写 -->
+            <a :href="url">百度一下</a>
+
+            输入网址:<input type="text" name="" v-model="url" id="">
+        </div>
+    </body>
+</html>

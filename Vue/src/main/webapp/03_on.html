@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>on</title>
+        <script src="WEB-INF/js/vue.js"></script>
+        <script>
+            window.onload = function () {
+                new Vue({
+                    el: "#dv",
+                    data: {
+                        url: 'https://www.baidu.com'
+                    },
+                    methods:{
+                        showInfo(){
+                            alert("hello")
+                        }
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div id="dv">
+            <!-- 给元素绑定单击事件，且设置事件发生后的处理函数-->
+            <button type="button" v-on:click="showInfo()">不要点我</button>
+            <!--简化写法 -->
+            <button type="button" @click="showInfo()">不要点我</button>
+        </div>
+    </body>
+</html>

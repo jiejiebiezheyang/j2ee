@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>mounted</title>
+        <script src="WEB-INF/js/vue.js"></script>
+        <script>
+            window.onload = function () {
+                new Vue({
+                    el: "#dv",
+                    mounted:function () {
+                        alert("装载完成")
+                    },
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div id="dv"></div>
+    </body>
+</html>

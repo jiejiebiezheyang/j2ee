@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>quickDemo</title>
+    <script src="WEB-INF/js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            /* 创建vue核心对象 */
+            new Vue({
+                el:"#dv",
+                // es6语法
+                data:function () {
+                    return{
+                      username:"张三"
+                    };
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="dv">
+        <!--
+            v-model 是将页面中的元素值和vue对象中data中的username进行双向绑定
+            当页面中的值发生变化，data的只会发生变化
+            data的值发生变化，页面也会跟着变
+         -->
+        <input type="text" name="username" v-model="username">
+        {{username}}
+    </div>
+</body>
+</html>

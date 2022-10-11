@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>条件</title>
+        <script src="WEB-INF/js/vue.js"></script>
+        <script>
+            window.onload = function () {
+                new Vue({
+                    el: "#dv",
+                    data: {
+                        salary: 5000
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div id="dv">
+            <!-- 条件不成立，不渲染-->
+            <div v-if="salary<5000">薪资低于5000</div>
+            <div v-else-if="salary===5000">薪资等于5000</div>
+            <div v-else>薪资大于5000</div>
+
+            <!-- 条件不成立不显示-->
+            <div v-show="salary===5000">哈哈</div>
+            <div v-show="salary!=5000">呵呵</div>
+
+            <input type="text" name="" v-model="salary" id="">
+        </div>
+    </body>
+</html>

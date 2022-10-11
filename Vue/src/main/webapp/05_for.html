@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>for</title>
+        <script src="WEB-INF/js/vue.js"></script>
+        <script>
+            window.onload = function () {
+                new Vue({
+                    el: "#dv",
+                    data: {
+                        names: ["tom","toms","lucy","jerry"],
+                        ages:[10,20,30]
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div id="dv">
+            <div v-for="name in names">
+                {{name}}
+            </div>
+            <div v-for="(age,index) in ages">
+                {{index}}---{{age}}
+            </div>
+        </div>
+    </body>
+</html>

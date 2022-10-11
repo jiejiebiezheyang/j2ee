@@ -70,6 +70,7 @@
   - `但是是一次性读取整个请求体数据，对于请求参数的获取不是太方便`
 
 #### 其他方法
+
 - 获取请求参数的方法
   - getParameter(ParameterName) 通过请求参数名获取请求参数的值
   - request.setCharacterEncoding("utf-8") 
@@ -78,3 +79,27 @@
   - request.getParameterValues("hobby") 获取指定含有多个值的请求参数
   - request.getParameterMap() key请求参数名 value请求参数值
   - request.getParameterNames() 获取所有参数名
+
+#### 共享数据
+
+域对象:一个有范围的对象，可以在这个范围在共享数据
+
+request是一个域对象，可以在一次请求中共享数据
+- request.setAttribute(key,value) 设置数据
+- request.getAttribute(key) 获取数据
+- request.removeAttribute(key) 删除数据
+
+#### 请求转发
+
+是一种服务器内部的资源跳转方式
+
+指服务器收到客户端请求后，从1个资源跳转到另一个资源的操作就叫请求转发
+- request.getRequestDispatcher(转发的资源地址) 获取请求分配器
+- requestDispatcher.forward(request, response) 请求转发
+- 特性
+  - 浏览器地址栏不会发生变化
+  - 不论转发多少次，都属于一次请求
+  - 可以共享request域对象中设置的数据
+  - 可以转发到WEB-INF目录下
+  - 不可以访问工程以外的资源
+
