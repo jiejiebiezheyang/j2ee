@@ -33,7 +33,7 @@ public class StatementDemo02 {
         return rows;
     }
 
-    // 通用查询(但数据)
+    // 通用查询(单条数据数据)
     public static <T> T queryOne(String sql, Class<T> clazz) throws Exception {
         // 获取连接
         Connection conn = JDBCUtils.getConnection();
